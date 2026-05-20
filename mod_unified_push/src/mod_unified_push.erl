@@ -240,7 +240,7 @@ get_jwk(Host) ->
 mod_opt_type(expiration) ->
     econf:int(0, 5184000); %% 86400 * 60
 mod_opt_type(jwk) ->
-    econf:map(econf:binary(), econf:either(econf:binary(), econf:int()));
+    econf:map(econf:binary(), econf:either(econf:binary(), econf:int()), [{return, map}]);
 mod_opt_type(push_url) ->
     econf:binary().
 
